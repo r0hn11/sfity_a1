@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+.flex{
+    display: flex;
+}
+.vanish{
+    display: none;
+}
+
+/* navbar */
+header{
+    align-items: center;
+    padding: 1em 4em;
+    background: rgb(0, 100, 255);
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    justify-content: space-between;
+}
+#logo>a{
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2em;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+#menu{
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+#menu>li{
+    list-style: none;
+}
+#menu>li>a{
+    padding: 1em;
+    text-decoration-line: none;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+#menu>li>button{
+    cursor: pointer;
+    background: #fff;
+    padding: 0.5em 1.5em;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7em;
+    color: #0064ff;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+#menu>li>button>i{
+    font-size: 1.2em;
+}
+#logo>a:hover{
+    text-shadow: 0 0 10px #00e5ff;
+}
+#menu>li>a:hover{
+    text-shadow: 0 0 10px #00e5ff;
+}
+#menu>li>button:hover{
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+/* content */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5em;
+    letter-spacing: 0.02em;
+    margin: auto;
+}
+.title{
+    font-size: 3em;
+}
+#img1,#img2{
+    background: transparent;
+    position: relative;
+}
+img{
+    max-height: 350px;
+}
+.gradient::before{
+    content: '';
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1),
+        transparent,
+        transparent
+    );
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+#img2::before{
+    background: linear-gradient(
+        90deg,
+        transparent,
+        transparent,
+        rgba(255, 255, 255, 1)
+    );
+}
+
+/*section1*/
+#luggage{
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    gap: 1em;
+}
+#t1{
+    padding: 0.5em 0;
+    max-width: 17ch;
+}
+#p1{
+    max-width: 35ch;
+    font-weight: 500;
+}
+/*section2*/
+#parking{
+    /* justify-content: center; */
+    align-items: center;
+    padding: 2em;
+}
+#t2{
+    text-align: right;
+    padding: 0.5em 0;
+    max-width: 17ch;
+}
+#p2{
+    margin-left: auto;
+    text-align: right;
+    max-width: 35ch;
+    font-weight: 500;
+}
+
+@media screen and (max-width:900px) {
+    main{
+        gap: 0;
+    }
+    #luggage{
+        flex-direction: column;
+        gap: 1em;
+    }
+    #parking{
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+    img{
+        max-height: 300px;
+        border-radius: 10px;
+    }
+    .gradient::before{
+        content: none;
+    }
+    #t1,#p1,#t2,#p2{
+        text-align: center;
+    }
+    #p1,#p2{
+        margin: auto;
+    }
+    #menu_ico{
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        cursor: pointer;
+        z-index: 9999;
+    }
+    .icon_bar{
+        width: 35px;
+        height: 4px;
+        background: #fff;
+        border-radius: 10px;
+        transform-origin: right;
+        transition: 0.4s 0.3s ease-in-out;
+    }
+    nav{
+        position: absolute;
+        right: 0;
+        background: #0064ff;
+    }
+    #ham_menu{
+        transform: translateX(0em);
+    }
+}
+
+/*navbar responsive*/
+#ham_nav{
+    background: red;
+    background: #0064ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    transform: translateX(50em);
+    transition: 0.5s ease-in-out;
+}
+#ham_menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+}
+#ham_menu>li{
+    list-style-type: none;
+}
+#ham_menu>li>a{
+    text-align: center;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+#ham_menu>li>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background: #fff;
+    border: none;
+    outline: none;
+    color: #0064ff;
+    padding: 0.5em 1.5em;
+    font-size: 1.2em;
+    transition: 0.3s ease-in-out;
+}
